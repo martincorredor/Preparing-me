@@ -2,6 +2,7 @@ import React from 'react';
 import Contador from './components/Contador';
 import Lista from './components/Lista';
 import Form from './components/Formulario';
+import Saludo from './components/saludo';
 
 function App() {
   return (
@@ -9,11 +10,10 @@ function App() {
       {/* 
       <h1>Hola mundo con REACT</h1>
       < Contador />
-      <div></div>
       <Lista/>
-      <div></div>
-      */}
       <Form/>
+      */}
+      <Saludo persona="Madresita"/>
     </div>
   );
 }
