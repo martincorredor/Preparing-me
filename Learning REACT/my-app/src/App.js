@@ -1,19 +1,17 @@
 import React from 'react';
-import Contador from './components/Contador';
-import Lista from './components/Lista';
-import Form from './components/Formulario';
-import Saludo from './components/saludo';
 
 function App() {
   return (
-    <div className="container mt-5">
-      {/* 
-      <h1>Hola mundo con REACT</h1>
-      < Contador />
-      <Lista/>
-      <Form/>
-      */}
-      <Saludo persona="Madresita"/>
+    <div className="container">
+      <h1>CRUD App with Hooks</h1>
+      <div className="flex-row">
+        <div className="flex-large">
+          <h2>Add user</h2>
+        </div>
+        <div className="flex-large">
+          <h2>View users</h2>
+        </div>
+      </div>
     </div>
   );
 }
