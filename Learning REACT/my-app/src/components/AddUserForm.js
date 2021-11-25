@@ -1,38 +1,43 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
 
 const AddUserForm = (props) => {
-  const { register, errors, handleSubmit } = useForm();
+  const initialFormState = { id: null, name: '', username: '' };
+  const [user, setUser] = useState(initialFormState);
+  
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    
+    setUser({ ...user, [name]: value });
+    console.log(event.target);
+    
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        if (!user.name || !user.username) return;
+
+        props.addUser(user);
+        setUser(initialFormState);
+      }}
+    >
       <label>Name</label>
       <input
         type="text"
         name="name"
-        value=""
-        ref={register({
-          required: { value: true, message: 'required field' },
-        })}
+        value={user.name}
+        onChange={handleInputChange}
       />
-      <div>{errors?.name?.message}</div>
-
       <label>Username</label>
       <input
         type="text"
         name="username"
-        value=""
-        ref={register({
-          required: { value: true, message: 'required field' },
-        })}
+        value={user.username}
+        onChange={handleInputChange}
       />
-      <div>{errors?.username?.message}</div>
-
-      <button>Add new user</button>
+      <button type="submit">Add new user</button>
     </form>
   );
 };

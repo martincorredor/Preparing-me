@@ -15,9 +15,12 @@ function App() {
 
   //Add Users
   const addUser = (user) => {
-    user.id = uuidv4();
-    setUsers([...users, user]);
-  };
+    user.id= uuidv4();
+    setUsers([
+      ...users,
+      user
+    ])
+  }
 
   return (
     <div className="container">
