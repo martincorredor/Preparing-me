@@ -13,11 +13,11 @@
     <div id="app">
         <h1>{{title}} </h1>
         <div>Fruit to add:</div>
-        <input type="text" v-model="newFruit">
+        <input type="text" v-model="newFruit" v-on:keyup.enter="addFruit">
         <button v-on:click="addFruit">ADD</button>
         <ul>
             <li v-for="fruit of fruits">
-                <input type="number" v-model.number="fruit.quantity">
+                <input type="number" v-model.number="fruit.quantity" >
                 {{fruit.name}}
                 <button v-on:click="fruit.quantity++">+</button>
                 <button v-if="fruit.quantity >= 1" v-on:click="fruit.quantity--">-</button>

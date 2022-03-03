@@ -36,8 +36,9 @@ const app = new Vue({
   });
 */
 
-/*================= Second Class ===================== */
 
+/*================= Third Class ===================== */
+/*
 const app = new Vue({
   el: '#app',
   data: {
@@ -69,3 +70,53 @@ const app = new Vue({
       }
   }
 });
+*/
+
+/*================= Fourth Class ===================== */
+/*
+const app = new Vue({
+    el: '#app',
+    data: {
+        background: 'bg-warning',
+        color: false      
+    },
+    methods: {
+      operations(){
+          console.log([] == ![])
+          console.log(NaN === NaN)
+          console.log(typeof NaN)
+          console.log(0.1 + 0.2 === 0.3)
+          console.log(3 > 2 > 1)
+          console.log([1, 2, 3]+ [4, 5, 6])
+          console.log(!![])
+          console.log([] == true)
+      }
+    },
+  });
+  */
+
+  /*================= Firfth Class ===================== */
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Martin',
+        counter: 0 
+    },
+    methods: {
+      
+    },
+    computed: {
+        invested(){
+            return this.message.split('').reverse().join('')
+        },
+        color(){
+            return {
+                'bg-success' : this.counter <= 10,
+                'bg-warning' : this.counter > 10 && this.counter < 20,
+                'bg-danger' : this.counter >= 20
+            }
+        }
+    }
+  });
+
