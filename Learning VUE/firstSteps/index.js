@@ -96,7 +96,7 @@ const app = new Vue({
   */
 
   /*================= Firfth Class ===================== */
-
+/*
   const app = new Vue({
     el: '#app',
     data: {
@@ -119,4 +119,55 @@ const app = new Vue({
         }
     }
   });
+*/
+
+/*================= Sixth Class ===================== */
+const app = new Vue({
+    el: '#app',
+    data: {
+        saludo: "soy el ciclo de vida de Vue"
+    },
+
+
+    beforeCreate() {
+        // Se ejecuta al crear la instancia de "new Vue"
+        console.log("beforeCreate")
+    },
+    created() {
+        // Se ejeccuta al crear los metodos, observadores y eventos, pero aún no se accede al DOM.
+        // Aún no se accede a "el".
+        console.log("created")
+    },
+    beforeMounted() {
+        //Se ejecuta antes de insertar al DOM
+        console.log("beforeMounted")
+    },
+    mounted(){
+        //Se ejecuta al insertar al DOM
+        console.log("mounted")
+    },
+    beforeUpdate(){
+        // Se ejecuta cuando detecta algun cambio en nuestro HTML
+        console.log("beforeUpdate")
+    },
+    updated(){
+        // Se ejecuta al realizar los cambios
+        console.log("updated")
+    },
+    beforeDestroy(){
+        // Se ejecuta al destruir la instancia
+        console.log("beforeDestroy")
+    },
+    destroyed(){
+        // Se destruye toda la instancia
+        console.log("destroyed")
+    },
+
+
+    methods: {
+        destroy(){
+            this.$destroy()
+        }
+    }
+});
 
