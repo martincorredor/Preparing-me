@@ -173,7 +173,7 @@ const app = new Vue({
 */
 
 /*================= Class seven ===================== */
-
+/*
 Vue.component('saludo', {
   //html
   template: //html
@@ -193,3 +193,13 @@ Vue.component('saludo', {
 const app = new Vue({
   el: '#app',
 });
+*/
+
+/*================= Class Eight ===================== */
+const app = new Vue({
+  el: '#app',
+  data: {
+    saludo: 'hola'
+  }
+})
+
