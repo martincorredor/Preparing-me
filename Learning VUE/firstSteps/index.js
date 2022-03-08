@@ -36,7 +36,6 @@ const app = new Vue({
   });
 */
 
-
 /*================= Third Class ===================== */
 /*
 const app = new Vue({
@@ -95,7 +94,7 @@ const app = new Vue({
   });
   */
 
-  /*================= Firfth Class ===================== */
+/*================= Firfth Class ===================== */
 /*
   const app = new Vue({
     el: '#app',
@@ -122,6 +121,7 @@ const app = new Vue({
 */
 
 /*================= Sixth Class ===================== */
+/*
 const app = new Vue({
     el: '#app',
     data: {
@@ -170,4 +170,26 @@ const app = new Vue({
         }
     }
 });
+*/
 
+/*================= Class seven ===================== */
+
+Vue.component('saludo', {
+  //html
+  template: //html
+  `
+    <div>
+      <h1>{{saludo}}</h1>
+      <h3>Martin</h3>
+    </div>
+    `,
+  data() {
+    return {
+      saludo: 'saludo desde Vue',
+    };
+  },
+});
+
+const app = new Vue({
+  el: '#app',
+});
